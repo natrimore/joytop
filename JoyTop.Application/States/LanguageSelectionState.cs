@@ -23,5 +23,10 @@ namespace JoyTop.Application.States
 
             return Task.CompletedTask;
         }
+
+        public Task ShowCommand(long chatId, ITelegramBotClient botClient, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
