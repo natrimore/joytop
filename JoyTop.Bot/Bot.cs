@@ -10,13 +10,9 @@ namespace JoyTop.Bot
     public class Bot : IBot
     {
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly ICommandService _commandService;
         
-        public Bot(ICommandService commandService, BotConfiguration botConfiguration)
+        public Bot(BotConfiguration botConfiguration)
         {
-            _commandService = commandService
-                ?? throw new ArgumentNullException(nameof(commandService));
-
             if (botConfiguration == null || string.IsNullOrEmpty(botConfiguration.BotToken))
                 throw new ArgumentNullException("Token was null");
 
@@ -40,11 +36,6 @@ namespace JoyTop.Bot
 
         private async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-            foreach (var command in _commandService.Get())
-            {
-                if (command.Contains(update))
-                    await command.ExecuteAsync(update.Message, botClient);
-            }
         }
 
         private Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
