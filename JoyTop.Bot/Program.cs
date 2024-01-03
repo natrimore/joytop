@@ -1,6 +1,4 @@
-﻿using JoyTop.Application.Abstractions;
-using JoyTop.Application.Services;
-using JoyTop.Bot;
+﻿using JoyTop.Bot;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -16,7 +14,6 @@ internal class Program
         var config = configuration.Build();
 
         var serviceProvider = new ServiceCollection()
-            .AddSingleton<ICommandService, CommandService>()
             .AddSingleton<IBot, Bot>()
             .AddSingleton<BotConfiguration>(sp =>
             {

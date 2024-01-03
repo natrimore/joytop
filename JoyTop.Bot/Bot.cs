@@ -11,6 +11,7 @@ namespace JoyTop.Bot
     {
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ICommandService _commandService;
+        
         public Bot(ICommandService commandService, BotConfiguration botConfiguration)
         {
             _commandService = commandService
