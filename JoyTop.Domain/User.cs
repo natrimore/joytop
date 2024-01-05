@@ -53,4 +53,11 @@
     {
         Customer
     }
+    /// <summary>
+    /// State type
+    /// </summary>
+    public enum State : short
+    {
+        Langauge, Contact, Menue, Setting, Location
+    }
 }
