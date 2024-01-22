@@ -6,7 +6,7 @@ namespace JoyTop.Application.States
 {
     public class LanguageSelectionState : IState
     {
-        public Task Execute(Message message, ITelegramBotClient botClient, CancellationToken cancellationToken = default)
+        public Task ExecuteAsync(Message message, ITelegramBotClient botClient, Context context, CancellationToken cancellationToken = default)
         {
             if (message.Text == "/start")
             {
@@ -21,10 +21,12 @@ namespace JoyTop.Application.States
                 
             }
 
+            context.TransitionTo(new LanguageSelectionState());
+
             return Task.CompletedTask;
         }
 
-        public Task ShowCommand(long chatId, ITelegramBotClient botClient, CancellationToken cancellationToken = default)
+        public Task ShowCommandAsync(long chatId, ITelegramBotClient botClient, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }

@@ -5,7 +5,7 @@ namespace JoyTop.Application.Models
 {
     public class UserContext
     {
-        public Domain.User User { get; set; }
+        public Domain.Entities.User User { get; set; }
 
         public IState CurrentState { get; set; }
     }
