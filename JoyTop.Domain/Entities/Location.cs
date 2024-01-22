@@ -1,4 +1,4 @@
-﻿namespace JoyTop.Domain
+﻿namespace JoyTop.Domain.Entities
 {
     /// <summary>
     /// Location entity
@@ -12,12 +12,12 @@
         /// </summary>
         public int UserId { get; set; }
         public User User { get; set; }
-        
+
         /// <summary>
         /// Gets or sets latitude of location
         /// </summary>
         public double Latitude { get; set; }
-        
+
         /// <summary>
         /// Gets or sets longitude of location
         /// </summary>

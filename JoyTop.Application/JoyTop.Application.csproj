@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JoyTop.Domain\JoyTop.Domain.csproj" />
+    <ProjectReference Include="..\JoyTop.Infrastructure\JoyTop.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

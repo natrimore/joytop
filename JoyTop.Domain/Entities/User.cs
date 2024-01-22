@@ -1,4 +1,4 @@
-﻿namespace JoyTop.Domain
+﻿namespace JoyTop.Domain.Entities
 {
     /// <summary>
     /// User entity
@@ -14,7 +14,7 @@
         /// Get or sets telegram id of the user
         /// </summary>
         public long TelegramId { get; set; }
-        
+
         /// <summary>
         /// Gets or sets role of user
         /// </summary>
@@ -44,6 +44,8 @@
         /// Gets or sets phone number
         /// </summary>
         public string PhoneNumber { get; set; }
+
+        public ICollection<Location> Locations { get; set; }
     }
 
     /// <summary>
